@@ -1,16 +1,17 @@
-# bcf_proyecto_3
+# Bottcamp Flutter UDD: Proyecto 3 - App de tarjeta de presentación personal
 
-A new Flutter project.
+Datos Estudiante:
 
-## Getting Started
+* Nombre: Esteban MT
+* Correo UDD: esmaldonado.appm2@bootcampudd.cl
+* Correo personal: mtesteban@outlook.com
 
-This project is a starting point for a Flutter application.
+# Descripción
+Realizado de acuerdo con las instrucciones del repositorio: [APPM_2_M3_PROY3](https://github.com/UDDBootcamp/APPM_2_M3_PROY3)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Notas de avance
+## Avances al 9 de marzo
+El proyecto base está creado y se agregaron:
+* Fuentes
+* Imagen para usar de fondo
+* Código QR a LinkedIn

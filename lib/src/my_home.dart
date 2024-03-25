@@ -1,20 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'content_widget.dart';
 import 'list_view_personal.dart';
-import 'package:flutter/widgets.dart';
+import 'list_view_profesional.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
 
   final String title;
 
@@ -23,43 +12,53 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
+  // Variable que permitirá guardar el índice de la pantalla que se encuentra seleccionada.
+  int _selectedIndex = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
+  void _setIndex(int index) {
+    // Esto permitirá modificar el índice de pantalla seleccionado
+    setState(() {      
+      _selectedIndex = index;
     });
   }
 
+  /*
+  Variable para guardar los dos widgets
+  que se mostraran dependiendo del item que
+  se encuentra activo en la bottom navigation bar
+  */
+  List<Widget> widgets = [
+    const ListViewPersonal(),
+    const ListViewProfesional()
+  ];
+
+  /*
+  Variable para guardar los dos posibles fondos
+  */
+  List<AssetImage> backgrounds = [
+    const AssetImage('assets/images/fondo9.png'),
+    const AssetImage('assets/images/fondo10.png')
+  ];
+
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+
     return Scaffold(           
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.all(20),
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/fondo3.png'),
+              image: backgrounds[_selectedIndex],
               fit: BoxFit.cover
             )
           ),
-          child: const Column(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Column(
+              const Column(
                 children: [
                   CircleAvatar(
                     radius: 60,
@@ -99,11 +98,10 @@ class _MyHomePageState extends State<MyHomePage> {
                       color: Color.fromARGB(255, 21, 44, 100),
                       fontSize: 14,
                     ),
-                  ),
-                   
+                  ),                   
                 ],
               ),
-              Divider(
+              const Divider(
                 color: Color.fromARGB(122, 21, 43, 100),
                 thickness: 1,
                 height: 30,
@@ -111,20 +109,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 endIndent: 20,
               ),
               // Imagen del cod QR
-              Image(
-                    alignment: Alignment.center,
-                    height: 120,                    
-                    image: AssetImage(
-                    'assets/images/qr_linkedin.png'
-                  )) ,
-              Divider(
+              const Image(
+                alignment: Alignment.center,
+                height: 120,                    
+                image: AssetImage(
+                'assets/images/qr_linkedin.png'
+                )
+              ),
+              const Text(
+                'Escanear para ver perfil en LinkedIn',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color.fromARGB(255, 91, 105, 142),
+                  fontSize: 10,
+                ),
+              ),
+              const Divider(
                 color: Color.fromARGB(122, 21, 43, 100),
                 thickness: 1,
                 height: 30,
                 indent: 20,
                 endIndent: 20,
               ),
-              ListiViewPersonal(),
+              widgets[_selectedIndex],
             ],
           ),
         ),
@@ -145,6 +152,8 @@ class _MyHomePageState extends State<MyHomePage> {
               label: 'Información profesional'
             )
           ],
+          currentIndex: _selectedIndex,
+          onTap: _setIndex,
         ),
        // This trailing comma makes auto-formatting nicer for build methods.
     );

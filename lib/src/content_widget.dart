@@ -20,7 +20,14 @@ class ContentWidget extends StatelessWidget {
       padding: const EdgeInsets.all(4),
       child: Container(
         decoration: BoxDecoration(
-          color: Color.fromARGB(24, 74, 137, 255),
+          color: const Color.fromARGB(255, 178, 217, 255),
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromARGB(89, 96, 125, 139),
+              blurRadius: 1,
+              spreadRadius: 1
+            )
+          ],
           borderRadius: BorderRadius.circular(7),
         ),
         child: Padding(
@@ -37,7 +44,7 @@ class ContentWidget extends StatelessWidget {
                     color: Color.fromARGB(255, 21, 44, 100)
                   ),
                   softWrap: true,
-                  maxLines: 2,
+                  maxLines: 10,
                   textAlign: TextAlign.start,
                 ),
               ),

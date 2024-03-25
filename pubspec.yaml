@@ -67,6 +67,12 @@ flutter:
     - assets/images/fondo2.png
     - assets/images/fondo3.png
     - assets/images/fondo4.png
+    - assets/images/fondo5.png
+    - assets/images/fondo6.png
+    - assets/images/fondo7.png
+    - assets/images/fondo8.png
+    - assets/images/fondo9.png
+    - assets/images/fondo10.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'content_widget.dart';
 
-class ListiViewPersonal extends StatelessWidget {
-  const ListiViewPersonal({
+class ListViewPersonal extends StatelessWidget {
+  const ListViewPersonal({
     super.key,
   });
 

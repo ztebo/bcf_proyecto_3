@@ -12,7 +12,6 @@ El código de la app está organizado según la siguiente estructura:
         - widget_info.dart
       - list_view_profesional.dart
         - widget_info.dart
-
 */
 
 void main() {

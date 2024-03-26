@@ -15,3 +15,5 @@ El proyecto base está creado y se agregaron:
 * Fuentes
 * Imagen para usar de fondo
 * Código QR a LinkedIn
+## Avances al 25 de marzo
+Se completaron lo requerimientos de la rúbrica de evaluación

@@ -84,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
               // Imagen del código QR
               const Image(
                 alignment: Alignment.center,
-                height: 120,                    
+                height: 110,                    
                 image: AssetImage(
                 'assets/images/qr_linkedin.png'
                 )

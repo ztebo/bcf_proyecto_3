@@ -25,41 +25,34 @@ class WidgetInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(4),
-      child: Container(
-        decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 178, 217, 255),
-          boxShadow: const [
-            BoxShadow(
-              color: Color.fromARGB(89, 96, 125, 139),
-              blurRadius: 1,
-              spreadRadius: 1
-            )
-          ],
-          borderRadius: BorderRadius.circular(7),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: Row(            
-            mainAxisSize: MainAxisSize.min,                      
-            children: [
-              icon,
-              const SizedBox(width: 10,),
-              Flexible(
-                child: Text(                
-                  textContent,
-                  style: const TextStyle(
-                    color: Color.fromARGB(255, 21, 44, 100)
-                  ),
-                  softWrap: true,
-                  maxLines: 10,
-                  textAlign: TextAlign.start,
+    // Uso del widget Card
+    return Card(
+      shadowColor: Colors.grey,      
+      borderOnForeground: false,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25)
+      ),
+      margin: const EdgeInsets.all(4),
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            icon,
+            const SizedBox(width: 20,),
+            Flexible(
+              child: Text(
+                textContent,
+                style: const TextStyle(
+                  color: Color.fromARGB(255, 21, 44, 100)
                 ),
+                softWrap: true,
+                maxLines: 10,
+                textAlign: TextAlign.start,
               ),
-            ],
-          ),
-        )
+            ),
+          ],
+        ),
       ),
     );
   }

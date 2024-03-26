@@ -1,13 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ContentWidget extends StatelessWidget {
+class WidgetInfo extends StatelessWidget {
+
+  /*
+  Widget destinado a presentar información de variada índole.
+  El objetivo es usarlo dentro de un widget Column o un ListView.
+  Requiere de un ícono y una cadena de texto.
+
+  Params:
+  icon: variable widget del tipo Icon
+  textContent: texto a ser desplegado en el widget
+  */
   
   final Icon icon;
   final String textContent;
-  
-  
-  const ContentWidget({
+    
+  const WidgetInfo({
     super.key,
     required this.icon,
     required this.textContent,

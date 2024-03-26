@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
+import 'widget_intro.dart';
 import 'list_view_personal.dart';
 import 'list_view_profesional.dart';
 
 class MyHomePage extends StatefulWidget {
+
+  /*
+  Widget Scaffold principal para contener la vista de tarjeta
+  de presentación. Incluye una lista para los fondos y una lista para 
+  los dos widgets que se deben desplegar como List View.
+  Una sola variable _selectedIndex es usada para controlar cual es el List View
+  y el fondo que se debe desplegar en pantalla
+  */
+
   const MyHomePage({super.key, required this.title});
 
   final String title;
@@ -16,7 +26,12 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   void _setIndex(int index) {
-    // Esto permitirá modificar el índice de pantalla seleccionado
+    /*
+    Esto permitirá modificar el índice de pantalla seleccionado.
+    Corresponde a la funcion que se ejecuta al seleccionar un item en 
+    el Bottom Navigation Bar
+    */
+
     setState(() {      
       _selectedIndex = index;
     });
@@ -58,49 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              const Column(
-                children: [
-                  CircleAvatar(
-                    radius: 60,
-                    backgroundImage: AssetImage(
-                      'assets/images/foto_perfil.jpeg'
-                    ),                     
-                  ),
-                  Text(
-                    'Esteban Maldonado Toro',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 44, 100),
-                      fontSize: 25,
-                    ),
-                  ),
-                  Text(
-                    'Especialista en Inteligencia de Negocios',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 44, 100),
-                      fontSize: 14,
-                      fontWeight: FontWeight.bold 
-                    ),
-                  ),
-                  Text(
-                    'Magíster en Inteligencia Artificial',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 44, 100),
-                      fontSize: 14,
-                    ),
-                  ),
-                  Text(
-                    'Ingeniero Civil en Minas',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 21, 44, 100),
-                      fontSize: 14,
-                    ),
-                  ),                   
-                ],
-              ),
+              const WidgetIntro(),
               const Divider(
                 color: Color.fromARGB(122, 21, 43, 100),
                 thickness: 1,
@@ -108,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 indent: 20,
                 endIndent: 20,
               ),
-              // Imagen del cod QR
+              // Imagen del código QR
               const Image(
                 alignment: Alignment.center,
                 height: 120,                    
@@ -131,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 indent: 20,
                 endIndent: 20,
               ),
+              // Variable para mostrar dos posibles widgets de tipo ListView
               widgets[_selectedIndex],
             ],
           ),

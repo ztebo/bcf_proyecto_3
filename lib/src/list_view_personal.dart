@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'content_widget.dart';
+import 'widget_info_.dart';
 
 class ListViewPersonal extends StatelessWidget {
+
+  /*
+  Widget destinado a presentar información en un List View
+  compuesto de widgets del tipo  Widget Info (widget_info.dart)
+  Este Widget en particular está armado con datos personales.
+  */
+
   const ListViewPersonal({
     super.key,
   });
@@ -11,7 +18,6 @@ class ListViewPersonal extends StatelessWidget {
     return Expanded(
       flex: 1,
       child: Scrollbar(
-        thumbVisibility: true,
         trackVisibility: true,
         interactive: true,
         child: ListView(
@@ -20,35 +26,35 @@ class ListViewPersonal extends StatelessWidget {
           // Para hacer que el contenido del listview no se desborde
           shrinkWrap: true,                  
           children: const [                    
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.phone, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: '+569 9344 89XX',                      
             ),
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.email, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: 'mtesteban@outlook.com',                      
             ),
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.cake, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: '33 años',                    
             ),                  
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.house, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: 'Domicilio en Santiago, Chile',                    
             ),
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.airplanemode_on, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: 'Disponible para traslado a regiones',                    
             ),
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.car_repair, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: 'Licencia de conducir clase B',                    
             ),
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.health_and_safety, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: 'Salud compatible con altura geográfica',                      
             ),
-            ContentWidget(
+            WidgetInfo(
               icon: Icon(Icons.timelapse, color:  Color.fromARGB(255, 21, 44, 100)),
               textContent: '8 años de experiencia laboral',                      
             ),
